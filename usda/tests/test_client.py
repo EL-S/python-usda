@@ -17,7 +17,7 @@ from usda.tests.sample_data import \
 class TestClient(object):
     """Tests for UsdaClient"""
 
-    @urlmatch(path=r'/usda/ndb/list')
+    @urlmatch(path=r'/ndb/list')
     def api_list(self, uri, request):
         if "lt=f" in uri.query:
             return json.dumps(FOOD_LIST_DATA)
@@ -28,11 +28,11 @@ class TestClient(object):
         elif "lt=d" in uri.query:
             return json.dumps(DERIVATION_CODES_LIST_DATA)
 
-    @urlmatch(path=r'/usda/ndb/reports')
+    @urlmatch(path=r'/ndb/reports')
     def api_report(self, uri, request):
         return json.dumps(FOOD_REPORT_DATA)
 
-    @urlmatch(path=r'/usda/ndb/V2/reports')
+    @urlmatch(path=r'/ndb/V2/reports')
     def api_report_v2(self, uri, request):
         if "ndbno=666" in uri.query:
             return json.dumps({
@@ -42,11 +42,11 @@ class TestClient(object):
             })
         return json.dumps(FOOD_REPORT_V2_DATA)
 
-    @urlmatch(path=r'/usda/ndb/nutrients')
+    @urlmatch(path=r'/ndb/nutrients')
     def api_nutrients(self, uri, request):
         return json.dumps(NUTRIENT_REPORT_DATA)
 
-    @urlmatch(path=r'/usda/ndb/search')
+    @urlmatch(path=r'/ndb/search')
     def api_search(self, uri, request):
         return json.dumps(FOOD_SEARCH_DATA)
 
@@ -57,8 +57,7 @@ class TestClient(object):
 
     def test_client_init(self):
         cli = UsdaClient("API_KAY")
-        assert cli.uri_part == "usda/"
-        assert cli.api.value == "ndb"
+        assert cli.uri_part == "ndb/"
         assert cli.key == "API_KAY"
         assert cli.use_format
 

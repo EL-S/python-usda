@@ -7,7 +7,7 @@ from httmock import urlmatch, HTTMock
 from requests import HTTPError
 from usda.base import api_request, DataGovClientBase, \
     DataGovApiError, DataGovApiRateExceededError, DataGovInvalidApiKeyError
-from usda.enums import UsdaApis, UsdaUriActions
+from usda.enums import UsdaUriActions
 
 
 class TestBase(object):
@@ -57,7 +57,7 @@ class TestBase(object):
     def api_http_error(self, uri, request):
         return {'status_code': 500, 'content': 'oh no'}
 
-    @urlmatch(netloc=r'.*api\.data\.gov.*')
+    @urlmatch(netloc=r'.*api\.nal\.usda\.gov.*')
     def data_gov_api_ok(self, uri, request):
         return {'status_code': 200, 'content': '{"yes": "it works"}'}
 
@@ -110,18 +110,17 @@ class TestBase(object):
                 api_request("http://api/httperror")
 
     def test_client_base_init(self):
-        cli = DataGovClientBase("blep", "boop", "API_KAY")
+        cli = DataGovClientBase("blep", "API_KAY")
         assert cli.uri_part == "blep"
-        assert cli.api == "boop"
         assert cli.key == "API_KAY"
         assert cli.use_format
 
     def test_client_base_build_uri(self):
-        cli = DataGovClientBase("blep/", UsdaApis.ndb, "API_KAY")
+        cli = DataGovClientBase("blep/", "API_KAY")
         assert cli.build_uri(UsdaUriActions.list) == \
-            "http://api.data.gov/blep/ndb/list"
+            "http://api.nal.usda.gov/blep/list"
 
     def test_client_base_run_request(self, apimock):
-        cli = DataGovClientBase("blep/", UsdaApis.ndb, "API_KAY")
+        cli = DataGovClientBase("blep/", "API_KAY")
         with apimock:
             assert cli.run_request(UsdaUriActions.list)["yes"] == "it works"

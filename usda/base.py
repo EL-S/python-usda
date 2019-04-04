@@ -3,8 +3,8 @@
 
 import requests
 
-BASE_URI = 'http://api.data.gov/'
-"""The base URI for all Data.gov API endpoints."""
+BASE_URI = 'http://api.nal.usda.gov/'
+"""The base URI for all USDA API endpoints."""
 
 
 class DataGovApiError(BaseException):
@@ -78,19 +78,16 @@ class DataGovClientBase(object):
     Base class for Data.gov API clients.
     """
 
-    def __init__(self, uri_part, api, api_key, use_format=True):
+    def __init__(self, uri_part, api_key, use_format=True):
         """
         :param str uri_part: First part of the path of an API endpoint.
            Usually an organization name.
-           For USDA's APIs, the path is ``usda/``.
-        :param api: An specific API subsection.
-        :type api: usda.enums.UsdaApis
+           For USDA's APIs, the path is ``ndb/``.
         :param str api_key: Data.gov API key to use for all requests.
         :param bool use_format: Enable or disable Automatic return format
            (JSON/XML) adding to URLs.
         """
         self.uri_part = uri_part
-        self.api = api
         self.key = api_key
         self.use_format = use_format
 
@@ -101,8 +98,8 @@ class DataGovClientBase(object):
         :param uri_action: An action on the client's API.
         :type uri_action: usda.enums.UsdaUriActions
         """
-        return "{0}{1}{2}/{3}".format(
-            BASE_URI, self.uri_part, self.api.value, uri_action.value)
+        # TODO: Use urllib.parse
+        return ''.join([BASE_URI, self.uri_part, uri_action.value])
 
     def run_request(self, uri_action, **kwargs):
         """

@@ -3,6 +3,5 @@
 # flake8: noqa
 
 from .client import UsdaClient
-from .enums import \
-    UsdaApis, UsdaNdbListType, UsdaNdbReportType, UsdaUriActions
+from .enums import UsdaNdbListType, UsdaNdbReportType, UsdaUriActions
 from .domain import Food, FoodReport, Nutrient

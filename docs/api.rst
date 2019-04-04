@@ -42,7 +42,7 @@ Enums
 -----
 
 .. automodule:: usda.enums
-   :members: UsdaApis, UsdaUriActions, UsdaNdbListType, UsdaNdbReportType
+   :members: UsdaUriActions, UsdaNdbListType, UsdaNdbReportType
 
 Low level classes
 -----------------

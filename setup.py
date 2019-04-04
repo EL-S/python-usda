@@ -15,6 +15,7 @@ setup(
         '': ['*.md', 'LICENSE', 'README'],
     },
     install_requires=read_requirements('requirements.txt'),
+    python_requires='>=3.4',
     extras_require={
         'dev': read_requirements('requirements-dev.txt'),
     },
