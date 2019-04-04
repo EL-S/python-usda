@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from usda.enums import \
-    UsdaApis, UsdaNdbListType, UsdaNdbReportType, UsdaUriActions
+from usda.enums import UsdaNdbListType, UsdaNdbReportType, UsdaUriActions
 from usda.domain import \
     ListItem, Nutrient, Food, FoodReport, FoodReportV2, NutrientReportFood
 from usda.base import DataGovClientBase, DataGovApiError
@@ -21,7 +20,7 @@ class UsdaClient(DataGovClientBase):
            For small testing purposes, you may use ``DEMO_KEY`` as an API key;
            but beware of rate limit errors.
         """
-        super().__init__('usda/', UsdaApis.ndb, api_gov_key)
+        super().__init__('ndb/', api_gov_key)
 
     def list_nutrients_raw(self, **kwargs):
         r"""

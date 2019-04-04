@@ -4,16 +4,6 @@
 from enum import Enum
 
 
-class UsdaApis(Enum):
-    """
-    Data.gov API endpoints for USDA APIs. Inherited from ``pygov``'s initial
-    goal of providing support for multiple APIs.
-    """
-
-    ndb = "ndb"
-    """The Nutritional Database API endpoint."""
-
-
 class UsdaUriActions(Enum):
     """USDA API available actions"""
 
