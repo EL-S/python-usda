@@ -3,6 +3,62 @@ python-usda documentation
 
 :ref:`genindex` - :ref:`modindex` - :ref:`search`
 
+.. image:: https://img.shields.io/pypi/l/python-usda.svg
+   :target: https://pypi.org/project/python-usda/
+   :alt: Package license badge
+
+.. image:: https://img.shields.io/pypi/format/python-usda.svg
+   :target: https://pypi.org/project/python-usda/
+   :alt: Python package format badge
+
+.. image:: https://img.shields.io/pypi/pyversions/python-usda.svg
+   :target: https://pypi.org/project/python-usda/
+   :alt: Compatible Python versions badge
+
+.. image:: https://img.shields.io/pypi/status/python-usda.svg
+   :target: https://pypi.org/project/python-usda/
+   :alt: Python package status badge
+
+.. image:: https://requires.io/github/Lucidiot/python-usda/requirements.svg?branch=master
+   :target: https://requires.io/github/Lucidiot/python-usda/requirements/?branch=master
+   :alt: Requires.io requirements badge
+
+.. image:: https://api.codeclimate.com/v1/badges/9a969172a5d47456376e/maintainability
+   :target: https://codeclimate.com/github/Lucidiot/python-usda/maintainability
+   :alt: CodeClimate maintanability badge
+
+.. image:: https://landscape.io/github/Lucidiot/python-usda/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/Lucidiot/python-usda/master
+   :alt: Landscape.io health badge
+
+.. image:: https://codecov.io/gl/Lucidiot/python-usda/branch/master/graph/badge.svg
+   :target: https://codecov.io/gl/Lucidiot/python-usda
+   :alt: Codecov coverage badge
+
+.. image:: https://img.shields.io/github/last-commit/Lucidiot/python-usda.svg
+   :target: https://gitlab.com/Lucidiot/python-usda/commits/master
+   :alt: Last commit badge
+
+.. image:: https://img.shields.io/gitter/room/BrainshitPseudoScience/Lobby.svg?logo=gitter-white
+   :target: https://gitter.im/BrainshitPseudoScience/Lobby
+   :alt: Chat on Gitter
+
+.. image:: https://img.shields.io/badge/badge%20count-14-brightgreen.svg
+   :target: https://gitlab.com/Lucidiot/python-usda
+   :alt: Badge count badge
+
+.. image:: https://gitlab.com/Lucidiot/python-usda/badges/master/pipeline.svg
+   :target: https://gitlab.com/Lucidiot/python-usda/pipelines
+   :alt: GitLab pipeline status badge
+
+.. image:: https://gitlab.com/Lucidiot/python-usda/badges/master/coverage.svg
+   :target: https://gitlab.com/Lucidiot/python-usda/pipelines
+   :alt: GitLab coverage badge
+
+.. image:: https://readthedocs.org/projects/python-usda/badge/?version=latest
+   :target: https://python-usda.readthedocs.io/en/latest
+   :alt: Read The Docs build status badge
+
 Introduction
 ------------
 
