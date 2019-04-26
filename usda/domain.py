@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from abc import ABC, abstractmethod
+from usda.enums import UsdaNdbReportType
 
 
 class UsdaObject(ABC):
@@ -306,12 +307,11 @@ class FoodReport(UsdaObject):
         :type: list(Nutrient)
         """
 
-        self.report_type = str(report_type)
+        self.report_type = UsdaNdbReportType.from_response_data(report_type)
         """
-        The Food Report's type as a string
-        (``Full``, ``Basic`` or ``Statistics``)
+        The Food Report's type.
 
-        :type: str
+        :type: UsdaNdbReportType
         """
 
         self.foot_notes = foot_notes
