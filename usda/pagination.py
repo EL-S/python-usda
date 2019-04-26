@@ -62,7 +62,7 @@ class RawPaginator(object):
         :type: dict(str, object)
         """
 
-        self.current_offset = 0
+        self.current_offset = request_kwargs.get('offset', 0)
         """
         Offset of the current page; the first index of the item that is
         returned in the current page.
