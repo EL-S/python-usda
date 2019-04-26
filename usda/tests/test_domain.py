@@ -3,6 +3,7 @@
 """Unit tests for USDA API result objects."""
 
 import pytest
+from usda.enums import UsdaNdbReportType
 from usda.domain import \
     UsdaObject, Food, Nutrient, Measure, \
     FoodReport, FoodReportV2, NutrientReportFood
@@ -64,7 +65,7 @@ class TestUsdaDomain(object):
     def test_food_report(self):
         """Tests for FoodReport class"""
         fr = FoodReport.from_response_data(FOOD_REPORT_DATA)
-        assert fr.report_type == "Basic"
+        assert fr.report_type == UsdaNdbReportType.basic
         assert len(fr.foot_notes) == 2
         assert fr.foot_notes[0].id == "a"
         assert fr.foot_notes[0].name == "Footnote 1"

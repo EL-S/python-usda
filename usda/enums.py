@@ -71,3 +71,11 @@ class UsdaNdbReportType(Enum):
        It is however possible to get all the returned data using raw methods
        on a :class:`usda.client.UsdaClient` instance.
     """
+
+    @classmethod
+    def from_response_data(cls, value):
+        return {
+            'Basic': cls.basic,
+            'Full': cls.full,
+            'Statistics': cls.stats,
+        }.get(value, value)
