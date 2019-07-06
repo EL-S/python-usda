@@ -24,7 +24,7 @@ Items
 ^^^^^
 
 .. automodule:: usda.domain
-   :members: Food, Nutrient, Measure 
+   :members: Food, Nutrient, Measure
 
 Food Reports
 ^^^^^^^^^^^^

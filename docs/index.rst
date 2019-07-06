@@ -175,7 +175,7 @@ Other topics
 
 .. toctree::
    :maxdepth: 2
-   
+
    guide
    contributing
    api
