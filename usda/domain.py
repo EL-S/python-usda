@@ -267,15 +267,13 @@ class FoodReport(UsdaObject):
         food = report['food']
         food_group = None if type == "Basic" or type == "Statistics" \
             else food["fg"]
-        if all(('idv' in fn and 'desc' in fn) for fn in report["footnotes"]):
-            foot_notes = [ListItem(fn['idv'], fn['desc']) for fn in report["footnotes"]]
-        else:
-            foot_notes = None
         return FoodReport(
             food=Food.from_response_data(food),
             nutrients=FoodReport._get_nutrients(food["nutrients"]),
             report_type=type,
-            foot_notes=foot_notes,
+            foot_notes=[
+                ListItem(fn['id'], fn['desc']) for fn in report["footnotes"]
+            ],
             food_group=food_group,
         )
 
@@ -429,7 +427,7 @@ class FoodReportV2(FoodReport):
             food_group=None,
             report_type=food['type'],
             foot_notes=[
-                ListItem(fn['idv'], fn['desc']) for fn in food['footnotes']
+                ListItem(fn['id'], fn['desc']) for fn in food['footnotes']
             ],
             nutrients=FoodReport._get_nutrients(food['nutrients']),
             sources=[
