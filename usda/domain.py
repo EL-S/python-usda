@@ -272,7 +272,7 @@ class FoodReport(UsdaObject):
             nutrients=FoodReport._get_nutrients(food["nutrients"]),
             report_type=type,
             foot_notes=[
-                ListItem(fn['idv'], fn['desc']) for fn in report["footnotes"]
+                ListItem(fn['id'], fn['desc']) for fn in report["footnotes"]
             ],
             food_group=food_group,
         )
@@ -427,7 +427,7 @@ class FoodReportV2(FoodReport):
             food_group=None,
             report_type=food['type'],
             foot_notes=[
-                ListItem(fn['idv'], fn['desc']) for fn in food['footnotes']
+                ListItem(fn['id'], fn['desc']) for fn in food['footnotes']
             ],
             nutrients=FoodReport._get_nutrients(food['nutrients']),
             sources=[
